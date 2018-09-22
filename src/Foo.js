@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Component } from 'react';
 
-class Foo extends React.Component {
+class Foo extends Component {
   componentDidMount() {}
 
   render() {
