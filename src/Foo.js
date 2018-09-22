@@ -1,10 +1,6 @@
 import React, { Fragment } from 'react';
 
 class Foo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {}
 
   render() {
