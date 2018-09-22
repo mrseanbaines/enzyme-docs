@@ -11,4 +11,9 @@ describe('<App />', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find(Foo)).to.have.lengthOf(3);
   });
+
+  it('renders an `.icon-star`', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('.icon-star')).to.have.lengthOf(1);
+  });
 });

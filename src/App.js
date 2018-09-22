@@ -8,6 +8,7 @@ class App extends Component {
         <Foo />
         <Foo />
         <Foo />
+        <div className="icon-star">⭐️</div>
       </Fragment>
     );
   }
