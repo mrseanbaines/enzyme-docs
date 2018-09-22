@@ -9,6 +9,7 @@ class App extends Component {
         <Foo />
         <Foo />
         <div className="icon-star">⭐️</div>
+        {this.props.children}
       </Fragment>
     );
   }

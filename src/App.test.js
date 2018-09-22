@@ -16,4 +16,13 @@ describe('<App />', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('.icon-star')).to.have.lengthOf(1);
   });
+
+  it('renders children when passed in', () => {
+    const wrapper = shallow((
+      <App>
+        <div className="unique" />
+      </App>
+    ));
+    expect(wrapper.contains(<div className="unique" />)).to.equal(true);
+  });
 });
