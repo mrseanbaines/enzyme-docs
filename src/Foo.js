@@ -6,7 +6,7 @@ class Foo extends React.Component {
   render() {
     return (
       <div>
-        <h1>Foo</h1>
+        <h1>{this.props.title}</h1>
         <button onClick={this.props.onButtonClick}>Click</button>
         <div className="foo-bar">foo bar</div>
         <div className="foo-bar">foo bar</div>
