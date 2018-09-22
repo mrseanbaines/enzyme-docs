@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-const Foo = () => (
-  <h1>Foo</h1>
+const Foo = ({ onButtonClick }) => (
+  <Fragment>
+    <h1>Foo</h1>
+    <button onClick={onButtonClick}>Click</button>
+  </Fragment>
 );
 
 export default Foo;

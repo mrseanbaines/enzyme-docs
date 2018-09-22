@@ -25,4 +25,11 @@ describe('<App />', () => {
     ));
     expect(wrapper.contains(<div className="unique" />)).to.equal(true);
   });
+
+  it('simulates click events', () => {
+    const onButtonClick = sinon.spy();
+    const wrapper = shallow(<Foo onButtonClick={onButtonClick} />);
+    wrapper.find('button').simulate('click');
+    expect(onButtonClick).to.have.property('callCount', 1);
+  });
 });
