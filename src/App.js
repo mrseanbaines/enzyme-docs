@@ -8,7 +8,7 @@ class App extends Component {
         <Foo />
         <Foo />
         <Foo />
-        <div className="icon-star">⭐️</div>
+        <span role="img" aria-label="star icon" className="icon-star">⭐️</span>
         {this.props.children}
       </Fragment>
     );
