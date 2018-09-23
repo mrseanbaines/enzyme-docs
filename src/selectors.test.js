@@ -41,3 +41,16 @@ describe(`Component's displayName selectors`, () => {
     expect(wrapper.find('MyComponent')).to.not.have.lengthOf(0);
   });
 });
+
+describe('Object property selectors', () => {
+  it('exists!', () => {
+    const wrapper = shallow(
+      <div>
+        <span foo={3} bar={false} title="baz" />
+      </div>
+    );
+    expect(wrapper.find({ foo: 3 })).to.not.have.lengthOf(0);
+    expect(wrapper.find({ bar: false })).to.not.have.lengthOf(0);
+    expect(wrapper.find({ title: 'baz' })).to.not.have.lengthOf(0);
+  });
+});
