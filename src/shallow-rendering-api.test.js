@@ -30,12 +30,63 @@ describe('.children([selector])', () => {
   });
 });
 
-describe('.closest(selector) ', () => {
+describe('.closest(selector)', () => {
   // Returns a wrapper of the first element that matches the selector by traversing
   // up through the current node's ancestors in the tree, starting with itself.
   // Note: can only be called on a wrapper of a single node.
   it('works!', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find(Foo).at(0).closest('.bar')).to.have.lengthOf(1);
+  });
+});
+
+describe('.contains(nodeOrNodes)', () => {
+  // Returns whether or not all given react elements match elements in the render tree.
+  // It will determine if an element in the wrapper matches the expected element by checking if
+  // the expected element has the same props as the wrapper's element and share the same values.
+  it('works!', () => {
+    const wrapper = shallow(
+      <div>
+        <div data-foo="foo" data-bar="bar">Hello</div>
+      </div>
+    );
+    expect(wrapper.contains(<div data-foo="foo" data-bar="bar">Hello</div>)).to.equal(true);
+
+    expect(wrapper.contains(<div data-foo="foo">Hello</div>)).to.equal(false);
+    expect(wrapper.contains(<div data-foo="foo" data-bar="bar" data-baz="baz">Hello</div>)).to.equal(false);
+    expect(wrapper.contains(<div data-foo="foo" data-bar="Hello">Hello</div>)).to.equal(false);
+    expect(wrapper.contains(<div data-foo="foo" data-bar="bar" />)).to.equal(false);
+  });
+
+  it('works!', () => {
+    const wrapper = shallow(
+      <div>
+        <span>Hello</span>
+        <div>Goodbye</div>
+        <span>Again</span>
+      </div>
+    );
+
+    expect(wrapper.contains([
+      <span>Hello</span>,
+      <div>Goodbye</div>,
+    ])).to.equal(true);
+
+    expect(wrapper.contains([
+      <span>Hello</span>,
+      <div>World</div>,
+    ])).to.equal(false);
+  });
+
+  it('works!', () => {
+    const calculatedValue = 2 + 2;
+
+    const wrapper = shallow(
+      <div>
+        <div data-foo="foo" data-bar="bar">{calculatedValue}</div>
+      </div>
+    );
+
+    expect(wrapper.contains(<div data-foo="foo" data-bar="bar">{4}</div>)).to.equal(true);
   });
 });
