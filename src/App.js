@@ -5,9 +5,11 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Foo foo="foo" />
-        <Foo foo="bar" />
-        <Foo foo="baz" />
+        <div className="bar">
+          <Foo foo="foo" />
+          <Foo foo="bar" />
+          <Foo foo="baz" />
+        </div>
         <span role="img" aria-label="star icon" className="icon-star">⭐️</span>
         {this.props.children}
         <ul>

@@ -29,3 +29,13 @@ describe('.children([selector])', () => {
     expect(wrapper.find('ul').children()).to.have.lengthOf(3);
   });
 });
+
+describe('.closest(selector) ', () => {
+  // Returns a wrapper of the first element that matches the selector by traversing
+  // up through the current node's ancestors in the tree, starting with itself.
+  // Note: can only be called on a wrapper of a single node.
+  it('works!', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(Foo).at(0).closest('.bar')).to.have.lengthOf(1);
+  });
+});
