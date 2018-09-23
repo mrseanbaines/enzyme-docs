@@ -33,3 +33,11 @@ describe('Component selectors', () => {
     expect(wrapper.find(Foo)).to.not.have.lengthOf(0);
   });
 });
+
+describe(`Component's displayName selectors`, () => {
+  it('exists!', () => {
+    const wrapper = shallow(<App />);
+    Foo.displayName = 'MyComponent';
+    expect(wrapper.find('MyComponent')).to.not.have.lengthOf(0);
+  });
+});
