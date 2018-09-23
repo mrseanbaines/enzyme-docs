@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { render, shallow } from 'enzyme';
 
+import App from './App';
 import Foo from './Foo';
 
 describe('CSS selectors', () => {
@@ -23,5 +24,12 @@ describe('Prop selectors', () => {
     expect(wrapper.find('[foo=3]')).to.not.have.lengthOf(0);
     expect(wrapper.find('[bar=false]')).to.not.have.lengthOf(0);
     expect(wrapper.find('[title="baz"]')).to.not.have.lengthOf(0);
+  });
+});
+
+describe('Component selectors', () => {
+  it('exists!', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(Foo)).to.not.have.lengthOf(0);
   });
 });
