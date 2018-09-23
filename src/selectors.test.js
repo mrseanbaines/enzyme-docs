@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { render } from 'enzyme';
+import { render, shallow } from 'enzyme';
 
 import Foo from './Foo';
 
@@ -10,5 +10,18 @@ describe('CSS selectors', () => {
     expect(wrapper.find('.foo.bar')).to.not.have.lengthOf(0);
     expect(wrapper.find('a[href="https://www.example.com"]')).to.not.have.lengthOf(0);
     expect(wrapper.find('#foo .bar')).to.not.have.lengthOf(0);
+  });
+});
+
+describe('Prop selectors', () => {
+  it('exists!', () => {
+    const wrapper = shallow(
+      <div>
+        <span foo={3} bar={false} title="baz" />
+      </div>
+    );
+    expect(wrapper.find('[foo=3]')).to.not.have.lengthOf(0);
+    expect(wrapper.find('[bar=false]')).to.not.have.lengthOf(0);
+    expect(wrapper.find('[title="baz"]')).to.not.have.lengthOf(0);
   });
 });
