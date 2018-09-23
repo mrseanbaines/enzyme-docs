@@ -12,3 +12,11 @@ describe('.at(index)', () => {
     expect(wrapper.find(Foo).at(1).props().foo).to.equal('bar');
   });
 });
+
+describe('.childAt(index)', () => {
+  // Returns a new wrapper with child at the specified index.
+  it('works!', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('ul').childAt(0).type()).to.equal('li');
+  });
+});
