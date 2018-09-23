@@ -20,3 +20,12 @@ describe('.childAt(index)', () => {
     expect(wrapper.find('ul').childAt(0).type()).to.equal('li');
   });
 });
+
+describe('.children([selector])', () => {
+  // Returns a new wrapper with all of the children of the node(s) in the current wrapper.
+  // Optionally, a selector can be provided and it will filter the children by this selector.
+  it('works!', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('ul').children()).to.have.lengthOf(3);
+  });
+});
