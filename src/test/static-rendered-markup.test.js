@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { render } from 'enzyme';
 
-import Foo from './Foo';
+import Foo from '../Foo';
 
 describe('<Foo />', () => {
   it('renders three `.foo-bar`s', () => {

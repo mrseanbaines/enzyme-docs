@@ -3,8 +3,8 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import App from './App';
-import Foo from './Foo';
+import App from '../App';
+import Foo from '../Foo';
 
 describe('<App />', () => {
   it('renders three <Foo /> components', () => {

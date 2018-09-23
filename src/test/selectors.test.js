@@ -2,8 +2,8 @@ import React from 'react';
 import { expect } from 'chai';
 import { render, shallow } from 'enzyme';
 
-import App from './App';
-import Foo from './Foo';
+import App from '../App';
+import Foo from '../Foo';
 
 describe('CSS selectors', () => {
   it('exists!', () => {

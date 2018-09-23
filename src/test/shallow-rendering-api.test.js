@@ -2,8 +2,8 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import App from './App';
-import Foo from './Foo';
+import App from '../App';
+import Foo from '../Foo';
 
 describe('.at(index)', () => {
   // Returns a wrapper around the node at a given index of the current wrapper.

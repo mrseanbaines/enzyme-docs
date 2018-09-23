@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { mount } from 'enzyme';
 import sinon from 'sinon';
 
-import Foo from './Foo';
+import Foo from '../Foo';
 
 describe('<Foo />', () => {
   it('allows us to set props', () => {
